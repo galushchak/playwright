@@ -13,10 +13,10 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined as unknown as string | number,
+  workers: process.env.CI ? 1 : (undefined as unknown as string | number),
   reporter: [
     ['html', { outputFile: 'playwright-report/index.html' }],
-    ['junit', { outputFile: 'playwright-report/results.junit.xml' }]
+    ['junit', { outputFile: 'playwright-report/results.junit.xml' }],
   ],
   use: {
     trace: 'on-first-retry',
