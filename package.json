@@ -9,7 +9,7 @@
     "test:debug": "pnpm exec playwright test --debug",
     "test:report": "pnpm exec playwright show-report",
     "test:ui": "pnpm exec playwright test --ui",
-    "lint": "eslint . --ext .ts,.tsx,.js",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.mts,.mjs --fix",
     "format": "prettier --write ."
   },
   "keywords": [],
