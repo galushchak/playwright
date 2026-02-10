@@ -29,10 +29,6 @@ export default defineConfig([
       ecmaVersion: 2021,
       sourceType: 'module',
 
-      // parserOptions: {
-      //   project: './tsconfig.json',
-      // },
-
       globals: {
         ...node,
       },

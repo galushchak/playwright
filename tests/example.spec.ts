@@ -1,5 +1,6 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+import { BASE_URL } from '../utils/constants.js';
 
 test.describe('navigation', () => {
   test.afterAll(async ({ context, browser }) => {
@@ -8,7 +9,7 @@ test.describe('navigation', () => {
   });
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://playwright.dev/');
+    await page.goto(BASE_URL);
   });
 
   test('has title', async ({ page }) => {
