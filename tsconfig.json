@@ -5,7 +5,13 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "checkJs": true,
+    "outDir": "dist",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "types": ["playwright", "node"]
   },
-  "include": ["tests/**/*.ts", "playwright.config.ts"]
+  "include": ["tests/**/*.ts", "playwright.config.ts"],
+  "exclude": ["node_modules", "**/node_modules/*"]
 }

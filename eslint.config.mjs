@@ -63,7 +63,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['tests/**/*.spec.{ts,tsx}'],
+    files: ['tests/**/*.{spec,test}.{ts,tsx}'],
     extends: compat.extends('plugin:playwright/recommended'),
   },
 ]);
