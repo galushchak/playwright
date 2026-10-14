@@ -15,32 +15,16 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 4,
   timeout: 60000,
   expect: { timeout: 10000 },
-  reporter: [
-    ['html', { outputFile: 'playwright-report/index.html' }],
-    // ['junit', { outputFile: 'playwright-report/results.junit.xml' }],
-    ['allure-playwright', { outputFolder: 'playwright-report/allure-results' }],
-  ],
+  reporter: [['html', { outputFile: 'playwright-report/index.html' }]],
   use: {
     trace: 'on-first-retry',
     navigationTimeout: 30000,
     actionTimeout: 10000,
   },
   projects: [
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
     {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 });
