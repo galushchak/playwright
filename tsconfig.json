@@ -6,8 +6,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "checkJs": true,
-    "outDir": "dist",
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "types": ["playwright", "node"]

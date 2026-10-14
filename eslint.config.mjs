@@ -28,24 +28,20 @@ export default defineConfig([
       parser: tsParser,
       ecmaVersion: 2021,
       sourceType: 'module',
-
       globals: {
         ...node,
       },
     },
-
     plugins: {
       '@typescript-eslint': typescriptEslint,
       playwright,
     },
-
     extends: compat.extends(
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
       'plugin:playwright/recommended',
       'plugin:prettier/recommended'
     ),
-
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -53,7 +49,6 @@ export default defineConfig([
           argsIgnorePattern: '^_',
         },
       ],
-
       'no-console': [
         'error',
         {
