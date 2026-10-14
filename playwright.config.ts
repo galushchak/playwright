@@ -12,12 +12,13 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 4,
   timeout: 60000,
   expect: { timeout: 10000 },
   reporter: [
     ['html', { outputFile: 'playwright-report/index.html' }],
-    ['junit', { outputFile: 'playwright-report/results.junit.xml' }],
+    // ['junit', { outputFile: 'playwright-report/results.junit.xml' }],
+    ['allure-playwright', { outputFolder: 'playwright-report/allure-results' }],
   ],
   use: {
     trace: 'on-first-retry',
@@ -37,9 +38,9 @@ export default defineConfig({
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'], channel: 'msedge' },
     },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    // },
   ],
 });
