@@ -1,4 +1,3 @@
-
 # Playwright
 node_modules/
 /test-results/
@@ -8,5 +7,4 @@ node_modules/
 /playwright/.auth/
 /allure-results/
 /allure-report/
-
 .env
