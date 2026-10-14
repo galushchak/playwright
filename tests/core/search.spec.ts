@@ -27,7 +27,14 @@ test.describe('Core Site Navigation and Preferences', () => {
     // 3. Open all results for the query.
     await page.getByRole('link', { name: /See all \d+ results/i }).click();
     await expect(page).toHaveURL(/https:\/\/playwright\.dev\/search\?q=locators(?:&|$)/);
-    await expect(page.getByRole('heading', { name: /Search results for "locators"/i })).toBeVisible();
-    await expect(page.getByRole('main').getByRole('link', { name: /Locators/i }).first()).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: /Search results for "locators"/i })
+    ).toBeVisible();
+    await expect(
+      page
+        .getByRole('main')
+        .getByRole('link', { name: /Locators/i })
+        .first()
+    ).toBeVisible();
   });
 });
