@@ -24,6 +24,10 @@ The Playwright configuration does not set a `baseURL`; current tests navigate to
 - Use the smallest stable setup needed. For browser state such as local storage, set it within the test before navigation; do not rely on a previously visited page or persistent browser profile.
 - Avoid fixed sleeps, `networkidle`, deprecated APIs, brittle implementation selectors, `test.only`, skipped tests, and weakened assertions. Do not increase timeouts to mask unreliable synchronization.
 - Use the Playwright CLI for live browser exploration when needed. Do not claim an interaction was observed unless it was actually exercised.
+- Use the Playwright trace viewer to inspect failed tests. Do not guess at a failure cause; report the exact evidence and commands that reproduce it.
+- Never assume a test failure is a bug in the site. Report discrepancies between the plan and the site, but do not invent expected behavior or outcomes.
+- Never expose secrets, credentials, or personal data in test code, logs, or traces. Use the `.env` file for local development and CI secrets for automated runs.
+- Never expect a test to pass on a site that is down, slow, or otherwise unavailable. Report the site status and network conditions explicitly rather than treating them as test results.
 
 ## Reliable Test Workflow
 
